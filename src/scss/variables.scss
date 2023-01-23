@@ -1,0 +1,53 @@
+$hunter-green: #386641ff;
+$may-green: #6a994eff;
+$android-green: #a7c957ff;
+$eggshell: #f2e8cfff;
+$pastel-pink: #d7988cff;
+$fuzzy-wuzzy: #ca706bff;
+$bittersweet-shimmer: #bc4749ff;
+
+// others
+$title-color: rgb(75, 75, 75);
+$brba-yellow: rgb(255, 225, 0);
+$white: rgb(255, 255, 255);
+$black-6: rgba(0, 0, 0, 0.6);
+$color-grey: #e7e7e7;
+
+// box-shadows
+$table-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+$add-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+$add-hover: 0 8px 16px rgba(0, 0, 0, 0.25);
+
+// other shadows
+$shadow-light: 0 1rem 2rem rgba(0, 0, 0, 0.3);
+$shadow-sticky: 0 0.5rem 0.7rem rgba(0, 0, 0, 0.5);
+$shadow-lightest: 0 2rem 5rem rgba(0, 0, 0, 0.25);
+$shadow-bevel: 0 -1rem 1.5rem rgba(0, 0, 0, 0.2) inset;
+$shadow-concave: -0.4rem -0.7rem 1rem rgba(255, 255, 255, 0.2) inset,
+	0.4rem 0.7rem 1rem rgba(0, 0, 0, 0.2) inset;
+$shadow-red-glow: 0rem -0.9rem 4rem -1rem rgba($pastel-pink, 0.25),
+	0rem 0.9rem 4rem -1rem rgba($pastel-pink, 0.25),
+	0.9rem 0rem 4rem -1rem rgba($pastel-pink, 0.25),
+	-0.9rem 0rem 4rem -1rem rgba($pastel-pink, 0.25);
+$shadow-green-glow: 0rem -0.9rem 4rem -1rem rgba($android-green, 0.25),
+	0rem 0.9rem 4rem -1rem rgba($android-green, 0.25),
+	0.9rem 0rem 4rem -1rem rgba($android-green, 0.25),
+	-0.9rem 0rem 4rem -1rem rgba($android-green, 0.25);
+$shadow-neumorphic: -1rem -1.5rem 2.5rem rgba(255, 255, 255, 0.65),
+	1rem 1.5rem 2rem rgba(0, 0, 0, 0.15);
+$shadow-neu-small: -0.4rem -0.7rem 1rem rgba(255, 255, 255, 0.7),
+	0.4rem 0.7rem 1rem rgba(0, 0, 0, 0.35);
+$shadow-neu-inset: -0.4rem -0.7rem 1rem rgba(255, 255, 255, 0.2) inset,
+	0.4rem 0.7rem 1rem rgba(0, 0, 0, 0.2) inset;
+
+// GRADIENTS
+$gradient-convex: linear-gradient(
+	-45deg,
+	rgba(0, 0, 0, 0.2),
+	rgba(255, 255, 255, 0.2)
+);
+$gradient-concave: linear-gradient(
+	135deg,
+	rgba(0, 0, 0, 0.22),
+	rgba(255, 255, 255, 0.25)
+);

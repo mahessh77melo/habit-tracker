@@ -1,0 +1,9 @@
+1. table checkbox functionality --------- DONE
+2. state maintenance -------------------- DONE
+3. table animation ---------------------- DONE
+4. add new habit feature ---------------- DONE
+5. browser memory implementation -------- DONE
+6. date wise refresh
+7. streak
+...................
+6. media queries (if time permits)

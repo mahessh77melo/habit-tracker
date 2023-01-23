@@ -1,0 +1,55 @@
+@import "variables.scss";
+
+.red {
+	flex: 0.33;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	.table {
+		display: flex;
+		font-size: 1.8rem;
+		color: $fuzzy-wuzzy;
+		flex-direction: column;
+		background-color: $white;
+		padding: 3rem 4rem;
+		align-items: center;
+		border-radius: 15px;
+		min-width: 50%;
+		width: min-content;
+		box-shadow: $table-shadow;
+	}
+	.add-icon {
+		padding: 0.7rem;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		background-color: white;
+		background-image: $gradient-convex;
+		padding-bottom: 0.6rem;
+		margin-bottom: 5rem;
+		border-radius: 50%;
+		cursor: pointer;
+		transition: all 0.2s ease;
+		box-shadow: $add-shadow;
+		color: $bittersweet-shimmer;
+		&:hover {
+			transform: translateY(-4px);
+			box-shadow: $add-hover;
+		}
+		& svg {
+			font-size: 3rem;
+		}
+	}
+	.no-items-message {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		color: $bittersweet-shimmer;
+		font-size: 1.6rem;
+		width: 100%;
+		font-weight: 700;
+		letter-spacing: 1.2px;
+	}
+}

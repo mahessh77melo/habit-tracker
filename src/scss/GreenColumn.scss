@@ -1,0 +1,55 @@
+@import "variables.scss";
+
+.green {
+	flex: 0.33;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	.table {
+		display: flex;
+		font-size: 1.8rem;
+		color: $may-green;
+		flex-direction: column;
+		background-color: $white;
+		padding: 3rem 4rem;
+		align-items: center;
+		border-radius: 15px;
+		box-shadow: $table-shadow;
+		width: min-content;
+		min-width: 50%;
+	}
+	.add-icon {
+		padding: 0.7rem;
+		background-color: white;
+		background-image: $gradient-convex;
+		padding-bottom: 0.6rem;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		border-radius: 50%;
+		margin-bottom: 5rem;
+		cursor: pointer;
+		box-shadow: $add-shadow;
+		transition: all 0.2s ease;
+		color: $hunter-green;
+		&:hover {
+			transform: translateY(-4px);
+			box-shadow: $add-hover;
+		}
+		& svg {
+			font-size: 3rem;
+		}
+	}
+	.no-items-message {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		color: $hunter-green;
+		font-size: 1.6rem;
+		width: 100%;
+		font-weight: 700;
+		letter-spacing: 1.2px;
+	}
+}

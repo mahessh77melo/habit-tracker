@@ -1,0 +1,89 @@
+@keyframes dashFromLeft {
+	0% {
+		transform: translateX(70rem);
+	}
+	70% {
+		transform: translateX(-18rem) skewX(20deg);
+	}
+	90% {
+		transform: translateX(-19rem) skewX(20deg);
+	}
+	100% {
+		transform: translateX(0rem) skewX(0);
+	}
+}
+@keyframes dashFromRight {
+	0% {
+		transform: translateX(-70rem);
+	}
+	70% {
+		transform: translateX(18rem) skewX(-20deg);
+	}
+	90% {
+		transform: translateX(19rem) skewX(-20deg);
+	}
+	100% {
+		transform: translateX(0rem) skewX(0);
+	}
+}
+@keyframes jump-checks {
+	0% {
+		opacity: 1;
+		visibility: visible;
+		transform: translateY(-10rem);
+	}
+	25% {
+		transform: translateY(0.35rem) rotate(-30deg);
+	}
+	50% {
+		transform: translateY(-1.5rem) rotate(30deg);
+	}
+	66% {
+		transform: translateY(0) rotate(-30deg);
+	}
+	80% {
+		transform: translateY(0.2rem) rotate(30deg);
+	}
+	100% {
+		transform: translateY(0) rotate(0deg);
+		visibility: visible;
+	}
+}
+@keyframes jump-x {
+	0% {
+		opacity: 1;
+		visibility: visible;
+		top: -10rem;
+	}
+	25% {
+		transform: translateX(50%) translateY(-50%) rotate(-30deg);
+		top: 0.75rem;
+	}
+	50% {
+		transform: translateX(50%) translateY(-50%) rotate(30deg);
+		top: -2.5rem;
+	}
+	66% {
+		transform: translateX(50%) translateY(-50%) rotate(-30deg);
+		top: 0;
+	}
+	80% {
+		transform: translateX(50%) translateY(-50%) rotate(30deg);
+		top: 0;
+	}
+	100% {
+		transform: translateX(50%) translateY(-50%) rotate(0deg);
+		top: 0;
+		visibility: visible;
+	}
+}
+@keyframes formFadeDown {
+	0% {
+		opacity: 0;
+		transform: translateY(-60%);
+	}
+	100% {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
