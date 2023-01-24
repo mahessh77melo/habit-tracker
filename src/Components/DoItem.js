@@ -3,30 +3,22 @@ import "../scss/DoItem.scss";
 import { MdOutlineCheck } from "react-icons/md";
 import { MdDeleteForever } from "react-icons/md";
 import { IoCheckmarkDoneCircle } from "react-icons/io5";
+import { useDispatch } from "react-redux";
+import { changeGreenDone, deleteGreen } from "../actions";
 
-const DoItem = ({ item, setItems, items }) => {
+const DoItem = ({ item }) => {
 	const [done, setDone] = useState(item.done);
-	useEffect(() => {
-		window.localStorage.setItem("ht_do_items", JSON.stringify(items));
-		console.log(JSON.parse(localStorage["ht_do_items"]));
-	}, [done]);
+	const dispatch = useDispatch();
 
 	const setAsDone = async () => {
 		await setDone((prev) => !prev);
-		await setItems((prev) => {
-			prev.forEach((curr) => {
-				if (curr.id === item.id) {
-					const currentTime = Date.now();
-					curr.done = done;
-					curr.entries.push(new Date(currentTime).toLocaleDateString());
-					curr.entryTimes.push(currentTime);
-				}
-			});
-			return prev;
-		});
 	};
+	useEffect(() => {
+		dispatch(changeGreenDone(item.id, done));
+	}, [done, dispatch, item.id]);
+
 	const deleteItem = () => {
-		setItems((prev) => prev.filter((curr) => curr.id !== item.id));
+		dispatch(deleteGreen(item.id));
 	};
 	const customTextColor = {
 		color: done ? "#6a994eff" : "rgb(100, 100, 100)",

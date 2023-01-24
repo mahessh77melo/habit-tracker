@@ -1,9 +1,19 @@
 import React, { useState } from "react";
 import "../scss/NewPopup.scss";
 import { FaWindowClose } from "react-icons/fa";
+import { useDispatch, useSelector } from "react-redux";
+import { addGreen, addRed } from "../actions";
 
 const NewPopup = ({ doOrDont, setNewHabit, displayPopup, setDisplayPopup }) => {
 	const [value, setValue] = useState("");
+	const items = useSelector(
+		(state) => state.habits[doOrDont ? "greens" : "reds"]
+	);
+	const dispatch = useDispatch();
+	const noDuplicateEntry = (hab) => {
+		const habitNames = items.map((item) => item.name);
+		return !habitNames.includes(hab);
+	};
 	const handleValueChange = (e) => {
 		setValue(e.target.value);
 	};
@@ -14,7 +24,9 @@ const NewPopup = ({ doOrDont, setNewHabit, displayPopup, setDisplayPopup }) => {
 		e.target.classList.remove(`${doOrDont ? "green-glow" : "red-glow"}`);
 	};
 	const createHabit = () => {
-		value && setNewHabit(value);
+		doOrDont
+			? value && noDuplicateEntry(value) && dispatch(addGreen(value))
+			: value && noDuplicateEntry(value) && dispatch(addRed(value));
 		setValue("");
 	};
 	return (

@@ -1,28 +1,23 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "../scss/DontItem.scss";
 import { IoCloseCircleOutline } from "react-icons/io5";
 import { IoCloseCircleSharp } from "react-icons/io5";
 import { MdDeleteForever } from "react-icons/md";
+import { useDispatch } from "react-redux";
+import { changeRedDone, deleteRed } from "../actions";
 
-const DontItem = ({ item, setItems }) => {
+const DontItem = ({ item }) => {
 	const [done, setDone] = useState(item.done);
+	const dispatch = useDispatch();
 	const setAsDone = async () => {
 		await setDone((prev) => !prev);
-		setItems((prev) => {
-			prev.forEach((curr) => {
-				if (curr.id === item.id) {
-					const currentTime = Date.now();
-					curr.done = done;
-					curr.entries.push(new Date(currentTime).toLocaleDateString());
-					curr.entryTimes.push(currentTime);
-				}
-			});
-			return prev;
-		});
 	};
 
+	useEffect(() => {
+		dispatch(changeRedDone(item.id, done));
+	}, [done, dispatch, item.id]);
 	const deleteItem = () => {
-		setItems((prev) => prev.filter((curr) => curr.id !== item.id));
+		dispatch(deleteRed(item.id));
 	};
 
 	const customTextColor = {
