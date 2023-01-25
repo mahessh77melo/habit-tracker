@@ -2,17 +2,12 @@
 .app {
 	font-size: 1.6rem;
 	min-height: 100vh;
-	background-image: linear-gradient(
-		90deg,
-		$android-green 0%,
-		$android-green 33%,
-		$eggshell 33%,
-		$eggshell 67%,
-		$pastel-pink 67%,
-		$pastel-pink 100%
-	);
 	display: flex;
 	flex-direction: row;
 	width: 100vw;
 	align-items: flex-start;
+	@media screen and (max-width: 900px) {
+		flex-direction: column;
+		align-items: stretch;
+	}
 }

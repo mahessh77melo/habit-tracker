@@ -1,6 +1,7 @@
 @import "./variables.scss";
 @import "./animations.scss";
 .title {
+	background-color: $eggshell;
 	flex: 0.34;
 	min-height: 100vh;
 	display: flex;
@@ -9,6 +10,10 @@
 	overflow: hidden;
 	color: $title-color;
 	font-family: "Chivo Mono", monospace;
+	@media screen and (max-width: 900px) {
+		flex: 1;
+		height: 100vh;
+	}
 
 	&__name {
 		font-size: 4rem;
@@ -16,12 +21,19 @@
 		text-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 		padding-bottom: 0.7rem;
 		padding-left: 2rem;
+		@media screen and (max-width: 600px) {
+			font-size: 3rem;
+			align-self: center;
+		}
 	}
 	&__header {
 		font-size: 5rem;
 		font-weight: 800;
 		text-shadow: 0 3px 6px rgba(0, 0, 0, 0.5);
 		text-align: center;
+		@media screen and (max-width: 600px) {
+			font-size: 4rem;
+		}
 	}
 	&__icon {
 		display: flex;

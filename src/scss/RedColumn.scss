@@ -2,11 +2,17 @@
 
 .red {
 	flex: 0.33;
+	background-color: $pastel-pink;
 	min-height: 100vh;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
+	@media screen and (max-width: 900px) {
+		flex: 1;
+		min-height: max-content;
+		padding: 6rem 0;
+	}
 	.table {
 		display: flex;
 		font-size: 1.8rem;
