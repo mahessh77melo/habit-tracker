@@ -29,6 +29,9 @@
 	border-radius: 0.5rem;
 	background-image: $gradient-convex,
 		linear-gradient(135deg, $color-grey, $color-grey);
+	@media screen and (max-width: 900px) {
+		width: 80vw;
+	}
 	&__header {
 		font-size: 2.5rem;
 		letter-spacing: 2px;
@@ -38,6 +41,9 @@
 		margin: 3rem;
 		font-weight: 700;
 		text-align: center;
+		@media screen and (max-width: 900px) {
+			font-size: 1.75rem;
+		}
 	}
 	&__input {
 		padding: 1.5rem 2rem;
@@ -52,26 +58,29 @@
 		border-radius: 3rem;
 		box-shadow: $shadow-neu-inset;
 		transition: all 0.3s;
+		@media screen and (max-width: 900px) {
+			font-size: 1.2rem;
+		}
 		&:focus {
 			outline: none;
 			// box-shadow: $shadow-neu-inset, $shadow-green-glow;
 		}
-		&::-webkit-input-placeholder {
-			font-size: 2rem;
-			color: $black-6;
-		}
-		&:-moz-placeholder {
-			font-size: 2rem;
-			color: $black-6;
-		}
+		&::-webkit-input-placeholder,
+		&:-moz-placeholder,
 		&::-moz-placeholder {
 			font-size: 2rem;
 			color: $black-6;
+			@media screen and (max-width: 900px) {
+				font-size: 1.3rem;
+			}
 		}
 	}
 	&__input::placeholder {
 		font-size: 1.6rem;
 		color: $black-6;
+		@media screen and (max-width: 900px) {
+			font-size: 1.3rem;
+		}
 	}
 	&__buttons {
 		display: flex;
@@ -97,6 +106,10 @@
 		margin-right: 2rem;
 		margin-top: 2rem;
 		transition: 0.2s ease-in-out;
+		@media screen and (max-width: 900px) {
+			font-size: 1.2rem;
+			padding: 1rem 2rem;
+		}
 		&:hover {
 			box-shadow: $shadow-neu-small, $shadow-concave;
 		}
