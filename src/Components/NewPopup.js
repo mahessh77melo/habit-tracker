@@ -1,14 +1,15 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import "../scss/NewPopup.scss";
 import { FaWindowClose } from "react-icons/fa";
 import { useDispatch, useSelector } from "react-redux";
 import { addGreen, addRed } from "../actions";
 
-const NewPopup = ({ doOrDont, setNewHabit, displayPopup, setDisplayPopup }) => {
+const NewPopup = ({ doOrDont, displayPopup, setDisplayPopup }) => {
 	const [value, setValue] = useState("");
 	const items = useSelector(
 		(state) => state.habits[doOrDont ? "greens" : "reds"]
 	);
+	const inputBox = useRef();
 	const dispatch = useDispatch();
 	const noDuplicateEntry = (hab) => {
 		const habitNames = items.map((item) => item.name);
@@ -29,6 +30,10 @@ const NewPopup = ({ doOrDont, setNewHabit, displayPopup, setDisplayPopup }) => {
 			: value && noDuplicateEntry(value) && dispatch(addRed(value));
 		setValue("");
 	};
+	useEffect(() => {
+		displayPopup && inputBox.current.focus();
+	}, [displayPopup, inputBox]);
+
 	return (
 		<div
 			className="section__overlay"
@@ -63,6 +68,7 @@ const NewPopup = ({ doOrDont, setNewHabit, displayPopup, setDisplayPopup }) => {
 					onChange={handleValueChange}
 					onFocus={createCustomGlow}
 					onBlur={removeCustomGlow}
+					ref={inputBox}
 				/>
 				<div className="form__buttons">
 					<div className="form__buttons--main">
