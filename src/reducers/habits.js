@@ -4,53 +4,30 @@ import actionNames from "../actions/actionNames";
 const habits = (state = initialState, action) => {
 	switch (action.type) {
 		case actionNames.addGreen:
-			console.log(state);
-			return state.greens?.length
-				? {
-						...state,
-						greens: [
-							...state.greens,
-							{
-								id: state.greens[state.greens?.length - 1]?.id + 1,
-								name: action.payload,
-								done: false,
-							},
-						],
-				  }
-				: {
-						...state,
-						greens: [
-							{
-								id: 1,
-								name: action.payload,
-								done: false,
-							},
-						],
-				  };
+			return {
+				...state,
+				greens: [
+					...state.greens,
+					{
+						id: (state.greens[state.greens?.length - 1]?.id || 0) + 1,
+						name: action.payload,
+						done: false,
+					},
+				],
+			};
 
 		case actionNames.addRed:
-			return state.reds?.length
-				? {
-						...state,
-						reds: [
-							...state.reds,
-							{
-								id: state.reds[state.reds?.length - 1]?.id + 1,
-								name: action.payload,
-								done: false,
-							},
-						],
-				  }
-				: {
-						...state,
-						reds: [
-							{
-								id: 1,
-								name: action.payload,
-								done: false,
-							},
-						],
-				  };
+			return {
+				...state,
+				reds: [
+					...state.reds,
+					{
+						id: (state.reds[state.reds?.length - 1]?.id || 0) + 1,
+						name: action.payload,
+						done: false,
+					},
+				],
+			};
 
 		case actionNames.changeGreenDone:
 			state.greens.forEach((curr) => {
